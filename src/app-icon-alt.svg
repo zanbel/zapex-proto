@@ -1,0 +1,49 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="1024" height="1024" rx="226" fill="url(#gradient)"/>
+  
+  <!-- Stylized "W" for Workout -->
+  <path d="M 200 300 L 320 700 L 420 400 L 512 700 L 604 400 L 704 700 L 824 300" 
+        stroke="white" 
+        stroke-width="80" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"
+        opacity="0.95"/>
+  
+  <!-- Accent glow -->
+  <path d="M 200 300 L 320 700 L 420 400 L 512 700 L 604 400 L 704 700 L 824 300" 
+        stroke="#14B8A6" 
+        stroke-width="90" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"
+        opacity="0.2"
+        filter="url(#glow)"/>
+  
+  <!-- Progress arc accent -->
+  <circle cx="512" cy="512" r="380" 
+          stroke="#14B8A6" 
+          stroke-width="12" 
+          fill="none"
+          opacity="0.3"
+          stroke-dasharray="400 2000"
+          stroke-linecap="round"
+          transform="rotate(-90 512 512)"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A4D4E;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

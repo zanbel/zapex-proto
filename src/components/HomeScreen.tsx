@@ -49,7 +49,7 @@ export function HomeScreen({ onNavigate, isDarkMode, onToggleDarkMode }: HomeScr
       <div className="px-5 pt-12 pb-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <p style={{ color: 'var(--workout-text-muted)' }} className="mb-1">Welcome back,</p>
+            <p style={{ color: 'var(--workout-text-muted)' }} className="mb-1">Welcome back, Roy</p>
             <h1 style={{ color: 'var(--workout-text-primary)' }}>Let's Get Moving</h1>
           </div>
           <div className="flex items-center gap-2">

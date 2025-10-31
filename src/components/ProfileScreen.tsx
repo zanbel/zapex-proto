@@ -7,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 
 interface UserProfile {
   name: string;
-  avatar: string;
   age: string;
   gender: string;
   unit: 'kg' | 'lbs';
@@ -22,8 +21,7 @@ interface ProfileScreenProps {
 export function ProfileScreen({ onBack, isDarkMode }: ProfileScreenProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState<UserProfile>({
-    name: 'Alex Johnson',
-    avatar: '💪',
+    name: 'Roy Z',
     age: '28',
     gender: 'male',
     unit: 'kg',
@@ -31,8 +29,6 @@ export function ProfileScreen({ onBack, isDarkMode }: ProfileScreenProps) {
   });
 
   const [editedProfile, setEditedProfile] = useState<UserProfile>(profile);
-
-  const avatarOptions = ['💪', '🏋️', '🤸', '🧘', '🚴', '🏃', '⚡', '🔥', '🎯', '👤'];
 
   const handleSave = () => {
     setProfile(editedProfile);
@@ -113,55 +109,6 @@ export function ProfileScreen({ onBack, isDarkMode }: ProfileScreenProps) {
 
       {/* Profile Content */}
       <div className="px-5 py-6 max-w-md mx-auto space-y-6">
-        {/* Avatar Selection */}
-        <div 
-          className="rounded-2xl p-6"
-          style={{ 
-            backgroundColor: 'var(--workout-bg-elevated)',
-            border: '1px solid var(--workout-border)'
-          }}
-        >
-          <div className="text-center mb-4">
-            <div 
-              className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-5xl"
-              style={{ 
-                backgroundColor: 'var(--workout-accent-primary)',
-                border: '3px solid var(--workout-border)'
-              }}
-            >
-              {isEditing ? editedProfile.avatar : profile.avatar}
-            </div>
-            {isEditing && (
-              <div className="text-xs mb-3" style={{ color: 'var(--workout-text-muted)' }}>
-                Select your avatar
-              </div>
-            )}
-          </div>
-
-          {isEditing && (
-            <div className="grid grid-cols-5 gap-3">
-              {avatarOptions.map((emoji) => (
-                <button
-                  key={emoji}
-                  onClick={() => updateField('avatar', emoji)}
-                  className="w-full aspect-square rounded-xl text-2xl flex items-center justify-center transition-all"
-                  style={{
-                    backgroundColor: editedProfile.avatar === emoji 
-                      ? 'var(--workout-accent-primary)' 
-                      : 'var(--workout-bg-primary)',
-                    border: `2px solid ${editedProfile.avatar === emoji 
-                      ? 'var(--workout-accent-primary)' 
-                      : 'var(--workout-border)'}`,
-                    transform: editedProfile.avatar === emoji ? 'scale(1.1)' : 'scale(1)'
-                  }}
-                >
-                  {emoji}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
         {/* Name */}
         <div 
           className="rounded-2xl p-5"
